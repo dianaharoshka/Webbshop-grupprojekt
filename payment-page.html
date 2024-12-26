@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/src/payment-page.css" />
+    <script
+      src="https://kit.fontawesome.com/bfacc845b8.js"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Khand:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <title>Checkout - Flawless Finds</title>
+  </head>
+  <body>
+    <div id="logo">Flawless Finds</div>
+    <div class="checkout-container">
+      <header>
+        <h1>Checkout</h1>
+      </header>
+      <main>
+        <section class="cart">
+          <h2>Your Cart</h2>
+          <ul class="cart-items">
+            <!-- Products  -->
+          </ul>
+          <div class="total">
+            <span>Total:</span>
+            <span id="total-price">$0</span>
+          </div>
+        </section>
+
+        <section class="checkout-form">
+          <h2>Delivery Information</h2>
+          <form action="/process-checkout" method="POST">
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="Enter your email"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="name">Full Name</label>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                placeholder="Enter your name"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="address">Address</label>
+              <input
+                type="text"
+                id="address"
+                name="address"
+                placeholder="Enter your address"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="zip">ZIP Code</label>
+              <input
+                type="text"
+                id="zip"
+                name="zip"
+                placeholder="Enter your ZIP code"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="phone">Phone Number</label>
+              <input
+                type="tel"
+                id="phone"
+                name="phone"
+                placeholder="Enter your phone number"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="payment">Payment Method</label>
+              <select id="payment" name="payment" required>
+                <option value="credit-card">Credit Card</option>
+                <option value="paypal">PayPal</option>
+                <option value="bank-transfer">Bank Transfer</option>
+              </select>
+            </div>
+            <button type="submit" class="checkout-btn">Confirm Payment</button>
+          </form>
+        </section>
+      </main>
+    </div>
+
+    <footer id="footer">
+      <div class="footer-contact">
+        <h3>Contact Us</h3>
+        <p>
+          Email:
+          <a href="mailto:info@flawlessfinds.com">info@flawlessfinds.com</a>
+        </p>
+        <p>Phonenumber: <a href="tel:0701234567">0701234567</a></p>
+      </div>
+      <div class="footer-address">
+        <h3>Address</h3>
+        <p>Gustavslundsvägen 151</p>
+        <p>167 51 Bromma</p>
+      </div>
+      <div class="footer-social">
+        <h3>Follow Us</h3>
+        <ul class="footer-social-list">
+          <li>
+            <i class="fa-brands fa-facebook"></i>
+            <a
+              href="https://www.facebook.com/"
+              target="_blank"
+              rel="noopener"
+              aria-label="Facebook (link opens in a new tab)"
+              >Facebook</a
+            >
+          </li>
+          <li>
+            <i class="fa-brands fa-instagram"></i>
+            <a
+              href="https://www.instagram.com/"
+              target="_blank"
+              rel="noopener"
+              aria-label="Instagram (link opens in a new tab)"
+              >Instagram</a
+            >
+          </li>
+          <li>
+            <i class="fa-brands fa-twitter"></i>
+            <a
+              href="https://www.twitter.com/"
+              target="_blank"
+              rel="noopener"
+              aria-label="Twitter (link opens in a new tab)"
+              >Twitter</a
+            >
+          </li>
+        </ul>
+      </div>
+      <div class="footer-payment">
+        <h3>Payment</h3>
+        <ul class="footer-payment-list">
+          <li><i class="fa-brands fa-cc-visa"></i>Visa</li>
+          <li><i class="fa-brands fa-cc-mastercard"></i>Mastercard</li>
+          <li><i class="fa-brands fa-cc-paypal"></i>PayPal</li>
+        </ul>
+      </div>
+    </footer>
+  </body>
+</html>
