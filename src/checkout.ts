@@ -4,9 +4,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if (form && mainContainer) {
     form.addEventListener("submit", (event) => {
-      event.preventDefault(); // Предотвращаем стандартное поведение формы
+      event.preventDefault();
 
-      // Очищаем содержимое основной секции
       mainContainer.innerHTML = `
             <section class="confirmation-message">
               <h2>Thank you for your purchase!</h2>
