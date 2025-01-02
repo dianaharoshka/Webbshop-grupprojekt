@@ -1,0 +1,78 @@
+@use "./mixins" as m;
+@use './variables' as v;
+
+body {
+    background-color: v.$body;
+
+    .products-hero {
+        @include m.flex(row, center, center);
+        @include m.size(400px, 100vw);
+        background-color: v.$secondarybg;
+        margin: 3rem 0;
+
+        .products-hero-text {
+            width: 60%;
+            text-align: center;
+            font-size: 2rem;
+        }
+    }
+
+    #products-container {
+        @include m.size(auto, 100vw);
+        @include m.flex(row, space-evenly, center);
+        flex-wrap: wrap;
+        gap: 50px;
+        margin: 2rem 0rem;
+
+        .product-card {
+            @include m.flex(column, center, center);
+            @include m.size(600px, 360px);
+            text-align: center;
+            padding: 10px 10px;
+            gap: 1rem;
+            border: solid black 1px;
+            background-color: v.$secondarybg;
+            background-image: linear-gradient(to bottom, white 50%, rgba(0, 0, 0, 0) 50%);
+            box-shadow: 10px 10px 10px lightgrey;
+
+
+            .product-img {
+                @include m.size(300px, auto);
+            }
+
+            .product-title {
+                font-size: 2rem;
+                min-height: 74px;
+            }
+
+            .product-description {
+                line-height: 1.5;
+                font-size: 1rem;
+                background-color: v.$secondarybg;
+                text-align: left;
+                min-height: 96px;
+            }
+
+            .product-price {
+                width: 100%;
+                text-align: right;
+                color: red;
+                font-size: 1.5rem;
+            }
+
+            .card-button {
+                @include m.size(40px, 90%);
+                background-color: blue;
+                color: white;
+                border: none;
+                border-radius: 10px;
+                font-size: 1.5rem;
+
+                &:hover {
+                    background-color: rgb(96, 96, 255);
+                }
+
+            }
+        }
+    }
+}

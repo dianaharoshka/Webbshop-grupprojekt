@@ -1,0 +1,21 @@
+@use './variables' as v;
+
+@mixin flex($direction, $justify, $align) {
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $justify;
+    align-items: $align;
+}
+
+@mixin size($h, $w) {
+    height: $h;
+    width: $w;
+}
+
+@mixin forSize($size) {
+    @if ($size ==v.$desktop) {
+        @media screen and (min-width: v.$desktop) {
+            @content;
+        }
+    }
+}
