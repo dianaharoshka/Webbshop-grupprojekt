@@ -1,7 +1,7 @@
 import axios from "axios";
 import { Product } from "../types/IProduct";
 
-async function fetchProducts(): Promise<Product[]> {
+export async function fetchProducts(): Promise<Product[]> {
   try {
     const response = await axios.get<{ products: Product[] }>(
       "https://dummyjson.com/products"
