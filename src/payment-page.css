@@ -1,18 +1,26 @@
 body {
   background-color: #fffdf1;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
   margin: 0;
   padding: 0;
   font-family: "Khand", sans-serif;
+  justify-content: center;
+  align-items: center;
 }
 
 #logo {
   background-color: #ebdbc2;
   font-size: 30px;
   text-align: center;
+  width: 100%;
+  box-sizing: border-box;
 }
 .checkout-container {
-  max-width: 100%;
-  margin: 20px auto;
+  max-width: 600px;
+  width: 90%;
+  margin: 20px;
   padding: 20px;
   background-color: #fffdf1;
   border-radius: 8px;
@@ -117,6 +125,9 @@ footer {
   flex-wrap: wrap;
   justify-content: space-between;
   padding: 20px;
+  margin-top: auto;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 footer div {
