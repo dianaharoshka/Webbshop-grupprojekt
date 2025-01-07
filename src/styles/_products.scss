@@ -1,78 +1,124 @@
 @use "./mixins" as m;
-@use './variables' as v;
+@use "./variables" as v;
 
 body {
-    background-color: v.$body;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  background-color: v.$body;
+  font-family: v.$font-family-khand;
 
-    .products-hero {
-        @include m.flex(row, center, center);
-        @include m.size(400px, 100vw);
+  .products-hero {
+    @include m.flex(column, center, center);
+    background-color: v.$secondarybg;
+    background-image: url(/src/hero-products.png);
+    background-size: cover;
+    background-position: center;
+    padding: 100px 20px;
+    text-align: center;
+    padding-bottom: 40px;
+    text-align: center;
+    position: relative;
+
+    #hero-content {
+      max-width: 800px;
+      margin: 0 auto;
+
+      h1 {
+        font-size: 3.2rem;
+        margin-bottom: 10px;
+        font-weight: bold;
+        color: #eeead0;
+        text-shadow: 0px 1px 2px black;
+      }
+
+      h2 {
+        font-size: 1.7rem;
+        color: #e3c7c7;
+        text-shadow: 0px 1px 2px black;
+      }
+
+      p {
+        font-size: 1.2em;
+        line-height: 1.5;
+        max-width: 700px;
+        margin: 0 auto;
+        color: #f4f2ec;
+        text-shadow: 0px 0px 3px black;
+        border-radius: 10px;
+      }
+    }
+  }
+  #site-name {
+    font-size: 30px;
+    background-color: v.$secondarybg;
+    text-align: center;
+    margin-bottom: 0px;
+    font-weight: normal;
+    color: black;
+  }
+
+  #products-container {
+    @include m.flex(row, space-evenly, center);
+    flex-wrap: wrap;
+    gap: 20px;
+    margin: 2rem 0rem;
+
+    .product-card {
+      @include m.flex(column, center, center);
+      width: 200px;
+      text-align: center;
+      padding: 10px 10px;
+      gap: 1rem;
+
+      background-color: v.$secondarybg;
+      background-image: linear-gradient(
+        to bottom,
+        #fbf5f0 40%,
+        rgba(0, 0, 0, 0) 50%
+      );
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+      transition: box-shadow 0.3s ease;
+      border-radius: 12px;
+
+      .product-img {
+        width: 100%;
+        height: 200px;
+        object-fit: contain;
+      }
+
+      .product-title {
+        font-size: 1.5rem;
+        min-height: 74px;
+      }
+
+      .product-description {
+        line-height: 1.5;
+        font-size: 1rem;
         background-color: v.$secondarybg;
-        margin: 3rem 0;
+        text-align: left;
+        min-height: 150px;
+      }
 
-        .products-hero-text {
-            width: 60%;
-            text-align: center;
-            font-size: 2rem;
+      .product-price {
+        width: 100%;
+        text-align: right;
+        color: red;
+        font-size: 1.5rem;
+      }
+
+      .card-button {
+        @include m.size(40px, 90%);
+        background-color: #007bff;
+        color: white;
+        border: none;
+        border-radius: 10px;
+        font-size: 1.5rem;
+
+        &:hover {
+          background-color: rgb(96, 96, 255);
         }
+      }
     }
-
-    #products-container {
-        @include m.size(auto, 100vw);
-        @include m.flex(row, space-evenly, center);
-        flex-wrap: wrap;
-        gap: 50px;
-        margin: 2rem 0rem;
-
-        .product-card {
-            @include m.flex(column, center, center);
-            @include m.size(600px, 360px);
-            text-align: center;
-            padding: 10px 10px;
-            gap: 1rem;
-            border: solid black 1px;
-            background-color: v.$secondarybg;
-            background-image: linear-gradient(to bottom, white 50%, rgba(0, 0, 0, 0) 50%);
-            box-shadow: 10px 10px 10px lightgrey;
-
-
-            .product-img {
-                @include m.size(300px, auto);
-            }
-
-            .product-title {
-                font-size: 2rem;
-                min-height: 74px;
-            }
-
-            .product-description {
-                line-height: 1.5;
-                font-size: 1rem;
-                background-color: v.$secondarybg;
-                text-align: left;
-                min-height: 96px;
-            }
-
-            .product-price {
-                width: 100%;
-                text-align: right;
-                color: red;
-                font-size: 1.5rem;
-            }
-
-            .card-button {
-                @include m.size(40px, 90%);
-                background-color: blue;
-                color: white;
-                border: none;
-                border-radius: 10px;
-                font-size: 1.5rem;
-
-                &:hover {
-                    background-color: rgb(96, 96, 255);
-                }
-
-            }
-        }
-    }
+  }
 }
