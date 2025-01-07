@@ -1,0 +1,56 @@
+.navigation {
+    overflow: hidden;
+    background-color: #ebdbc2;
+    position: relative;
+}
+
+.navigation #navLinks {
+    display: none;
+}
+
+.navigation a {
+    color: white;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+    display: block;
+}
+
+.navigation a.icon {
+    background: #ebdbc2;
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.navigation a:hover {
+    background-color: rgb(226, 208, 184);
+    color: #746f68;
+}
+
+.name {
+    background-color: #ebdbc2;
+    color: white;
+    text-align: center;
+}
+
+.btn {
+    color: #746f68;
+}
+
+@media (min-width: 768px) {
+    .navigation #navLinks {
+        display: flex;
+        justify-content: flex-start;
+        width: auto;
+    }
+
+    .navigation a {
+        display: inline-block;
+    }
+
+    .navigation a.icon {
+        display: none;
+    }
+}
