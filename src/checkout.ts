@@ -8,61 +8,127 @@ const checkoutItemsContainer: HTMLUListElement = document.getElementById(
   "checkout-items"
 ) as HTMLUListElement;
 
-try {
-  const products: Product[] = OrderHandler.getAllItems();
-  products.forEach((product) => {
-    updateTotalPrice(product.price, product.quantity);
-    createProductCard(product);
-  });
-} catch (error) {
-  console.error("Error:", error);
+function renderCart() {
+  try {
+    checkoutItemsContainer.innerHTML = "";
+    sum = 0;
+
+    const products: Product[] = OrderHandler.getAllItems();
+
+    products.forEach((product) => {
+      createProductCard(product);
+      sum += product.price * product.quantity;
+    });
+
+    updateTotalPrice();
+  } catch (error) {
+    console.error("Error rendering cart:", error);
+  }
 }
 
-function createProductCard(product: Product): HTMLElement {
+function createProductCard(product: Product): void {
   const card = document.createElement("li");
   card.classList.add("product-card");
-  if (checkoutItemsContainer) checkoutItemsContainer.appendChild(card);
 
+  const image = createProductImage(product);
+  const title = createProductTitle(product);
+  const quantityInput = createQuantityControls(product);
+  const removeButton = createRemoveButton(product);
+  const price = createProductPrice(product);
+
+  card.appendChild(image);
+  card.appendChild(title);
+  card.appendChild(quantityInput);
+  card.appendChild(removeButton);
+  card.appendChild(price);
+
+  checkoutItemsContainer.appendChild(card);
+}
+
+function createProductImage(product: Product): HTMLImageElement {
   const image = document.createElement("img");
   image.style.width = "100px";
   image.src = product.images[0];
   image.alt = product.title;
-  card.appendChild(image);
+  return image;
+}
 
+function createProductTitle(product: Product): HTMLParagraphElement {
   const title = document.createElement("p");
   title.classList.add("product-checkout-title");
   title.textContent = product.title;
-  card.appendChild(title);
+  return title;
+}
 
-  const quantity = document.createElement("input");
-  quantity.type = "number";
-  quantity.classList.add("product-checkout-quantity");
-  quantity.value = product.quantity.toString();
-  quantity.step = "1";
+function createQuantityControls(product: Product): HTMLElement {
+  const quantityControls = document.createElement("div");
+  quantityControls.classList.add("quantity-controls");
 
-  quantity.addEventListener("input", (e) => {
-    const newQuantity = parseInt((e.target as HTMLInputElement).value, 10) || 1;
-    product.quantity = newQuantity;
-    OrderHandler.updateItem(product, newQuantity);
-    updateTotalPrice(product.price, product.quantity);
+  const decrementButton = document.createElement("button");
+  decrementButton.textContent = "-";
+  decrementButton.classList.add("decrement-btn");
+
+  const quantityDisplay = document.createElement("span");
+  quantityDisplay.classList.add("quantity-display");
+  quantityDisplay.textContent = product.quantity.toString();
+
+  const incrementButton = document.createElement("button");
+  incrementButton.textContent = "+";
+  incrementButton.classList.add("increment-btn");
+
+  decrementButton.addEventListener("click", () => {
+    if (product.quantity > 1) {
+      product.quantity -= 1;
+      quantityDisplay.textContent = product.quantity.toString();
+
+      OrderHandler.updateItem(product, product.quantity);
+      renderCart();
+    }
   });
-  card.appendChild(quantity);
 
+  incrementButton.addEventListener("click", () => {
+    product.quantity += 1;
+    quantityDisplay.textContent = product.quantity.toString();
+
+    OrderHandler.updateItem(product, product.quantity);
+    renderCart();
+  });
+
+  quantityControls.appendChild(decrementButton);
+  quantityControls.appendChild(quantityDisplay);
+  quantityControls.appendChild(incrementButton);
+
+  return quantityControls;
+}
+
+function createRemoveButton(product: Product): HTMLButtonElement {
+  const removeButton = document.createElement("button");
+  removeButton.classList.add("remove-item-checkout");
+  removeButton.textContent = "Remove item";
+
+  removeButton.addEventListener("click", () => {
+    OrderHandler.deleteItem(product);
+    renderCart();
+  });
+
+  return removeButton;
+}
+
+function createProductPrice(product: Product): HTMLDivElement {
   const price = document.createElement("div");
   price.classList.add("product-checkout-price");
   price.textContent = `$${product.price.toFixed(2)}`;
-  card.appendChild(price);
-
-  return card;
+  return price;
 }
 
-function updateTotalPrice(price: number, quantity: number) {
-  sum += price * quantity;
-
+function updateTotalPrice(): void {
   const priceContainer: HTMLSpanElement = document.getElementById(
     "total-price"
   ) as HTMLSpanElement;
-  priceContainer.innerText = `$${sum.toFixed(2)}`;
+
+  if (priceContainer) {
+    priceContainer.innerText = `Total: $${sum.toFixed(2)}`;
+  }
 }
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -72,6 +138,7 @@ document.addEventListener("DOMContentLoaded", () => {
   if (form && mainContainer) {
     form.addEventListener("submit", (event) => {
       event.preventDefault();
+      OrderHandler.clearStorage();
 
       mainContainer.innerHTML = `
       <section class="confirmation-message">
@@ -81,3 +148,5 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 });
+
+renderCart();
