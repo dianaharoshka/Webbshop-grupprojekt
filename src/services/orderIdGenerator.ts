@@ -7,16 +7,18 @@ export default class FinishedOrder {
   }
 
   static GenerateId() {
-    const generatedID: string = uuidv4();
     const orders: Iorder[] = FinishedOrder.GetOrderId();
-    if (orders.find((orders) => orders.id != generatedID)) {
-      const newOrders: Iorder[] = orders;
-      let newOrder: Iorder = {
-        id: generatedID,
-      };
-      newOrders.push(newOrder);
-      localStorage.setItem("generatedOrderID", JSON.stringify(newOrders));
-    } else console.log("ERROR");
+    const generatedID: string = uuidv4();
+
+    if (orders.some((order) => order.id === generatedID)) {
+      console.log("ERROR: Duplicate order ID");
+      return null;
+    }
+
+    const newOrder: Iorder = { id: generatedID };
+    const newOrders: Iorder[] = [...orders, newOrder];
+
+    localStorage.setItem("generatedOrderID", JSON.stringify(newOrders));
 
     return generatedID;
   }

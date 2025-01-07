@@ -7,18 +7,17 @@ export default class OrderHandler {
 
   static addToCart(orderedItem: Product) {
     const items: Product[] = OrderHandler.getAllItems();
-    if (items.find((items) => items.title == orderedItem.title)) {
-      const existingItems: Product[] = items.filter(
-        (items) => items.title != orderedItem.title
-      );
-      orderedItem.quantity += 1;
-      existingItems.push(orderedItem);
-      localStorage.setItem("ItemsOrder", JSON.stringify(existingItems));
+    const existingItem = items.find((item) => item.title == orderedItem.title);
+
+    if (existingItem) {
+      existingItem.quantity += 1;
     } else {
       orderedItem.quantity = 1;
       items.push(orderedItem);
-      localStorage.setItem("ItemsOrder", JSON.stringify(items));
     }
+
+    items.sort((a, b) => a.title.localeCompare(b.title));
+    localStorage.setItem("ItemsOrder", JSON.stringify(items));
   }
 
   static updateItem(itemToUpdate: Product, changedQuantity: number) {
@@ -30,12 +29,14 @@ export default class OrderHandler {
         );
         itemToUpdate.quantity = changedQuantity;
         existingItems.push(itemToUpdate);
+        existingItems.sort((a, b) => a.title.localeCompare(b.title));
         localStorage.setItem("ItemsOrder", JSON.stringify(existingItems));
       } else {
         const existingItems: Product[] = items.filter(
           (items) => items.title != itemToUpdate.title
         );
         itemToUpdate.quantity = 0;
+        existingItems.sort((a, b) => a.title.localeCompare(b.title));
         localStorage.setItem("ItemsOrder", JSON.stringify(existingItems));
       }
     } else console.log("ERROR");
@@ -46,6 +47,6 @@ export default class OrderHandler {
     localStorage.setItem("ItemsOrder", JSON.stringify(newitems));
   }
   static clearStorage() {
-    localStorage.setItem("ItemsOrder", JSON.stringify("[]"));
+    localStorage.setItem("ItemsOrder", "[]");
   }
 }
