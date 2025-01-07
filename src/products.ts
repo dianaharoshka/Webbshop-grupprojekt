@@ -1,5 +1,6 @@
 import { fetchProducts } from "./services/DummyJSONCall";
 import { Product } from "./types/IProduct";
+import OrderHandler from "./services/StorageHandler";
 
 const productContainer = document.getElementById("products-container");
 
@@ -47,8 +48,9 @@ function createProductCard(product: Product): HTMLElement {
   addToCart.classList.add("card-button");
   addToCart.textContent = "Add to cart";
   card.appendChild(addToCart);
+
   addToCart.addEventListener("click", () => {
-    console.log(product);
+    OrderHandler.addToCart(product);
   });
 
   return card;
