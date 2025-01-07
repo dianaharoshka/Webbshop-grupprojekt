@@ -1,12 +1,9 @@
-import { fetchProducts } from "./services/DummyJSONCall";
 import { Product } from "./types/IProduct";
 import OrderHandler from "./services/StorageHandler"; 
 
-
 (async () => {
   try {
-    const fetchedItems: getAllItems[] = await fetchItems();
-    const getAllItems: getAllItems[] = fetchedItems.slice(0, 10);
+    const getAllItems: Product[] = OrderHandler.getAllItems()
     console.log("Fetched iteams to cart:", getAllItems);
     getAllItems.forEach((getAllItems) => {
       createProductCard(getAllItems);
@@ -20,7 +17,8 @@ import OrderHandler from "./services/StorageHandler";
 function createProductCard(product: Product): HTMLElement {
   const card = document.createElement("div");
   card.classList.add("product-card");
-  if (itemsContainer) itemsContainer.appendChild(card);
+  if (cartItems) cartItems.appendChild(card);
+// "hitta" cartItems 
 
   const image = document.createElement("img");
   image.classList.add("product-img");
@@ -39,22 +37,11 @@ function createProductCard(product: Product): HTMLElement {
   card.appendChild(price);
 }
 
-static updateItem(itemToUpdate: Product, changedQuantity: number) {
-    const items: Product[] = OrderHandler.getAllItems();
-    if (items.find((items) => items.title == itemToUpdate.title)) {
-      if (changedQuantity > 0) {
-        const existingItems: Product[] = items.filter(
-          (items) => items.title != itemToUpdate.title
-        );
-        itemToUpdate.quantity = changedQuantity;
-        existingItems.push(itemToUpdate);
-        localStorage.setItem("ItemsOrder", JSON.stringify(existingItems));
-      } else {
-        const existingItems: Product[] = items.filter(
-          (items) => items.title != itemToUpdate.title
-        );
-        itemToUpdate.quantity = 0;
-        localStorage.setItem("ItemsOrder", JSON.stringify(existingItems));
-      }
-    } else console.log("ERROR");
-  }
+const updateItem = document.createElement("button");
+updateItem.classList.add("item-button");
+updateItem.textContent = "Update items";
+card.appendChild(updateItem);
+
+updateItem.addEventListener("click", () => {
+  OrderHandler.updateItem(product, x);
+});
