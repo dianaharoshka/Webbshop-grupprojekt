@@ -12,6 +12,7 @@
       href="https://fonts.googleapis.com/css2?family=Khand:wght@400;700&display=swap"
       rel="stylesheet"
     />
+    <script type="module" defer src="/src/checkout.ts"></script>
     <title>Checkout - Flawless Finds</title>
   </head>
   <body>
@@ -23,12 +24,12 @@
       <main>
         <section class="cart">
           <h2>Your Cart</h2>
-          <ul class="cart-items">
+          <ul id="checkout-items">
             <!-- Products  -->
           </ul>
           <div class="total">
             <span>Total:</span>
-            <span id="total-price">$0</span>
+            <span id="total-price"></span>
           </div>
         </section>
 
@@ -157,6 +158,5 @@
         </ul>
       </div>
     </footer>
-    <script src="/src/checkout.ts"></script>
   </body>
 </html>
