@@ -1,11 +1,11 @@
 .navigation {
-  width: 100vw;
-  overflow: hidden;
-  background-color: #ebdbc2;
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  padding: 10px 10px;
+    width: 100vw;
+    overflow: hidden;
+    background-color: #ebdbc2;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding: 10px 10px;
 }
 
 .name {
@@ -59,9 +59,9 @@
   color: rgb(226, 208, 184);
 }
 
-#cart-container {
-  display: flex;
-  justify-content: end;
+.cart-button {
+    display: flex;
+    justify-content: end;
 }
 
 @media (min-width: 768px) {
