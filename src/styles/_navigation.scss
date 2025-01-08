@@ -1,82 +1,86 @@
 .navigation {
-    width: 100vw;
-    overflow: hidden;
-    background-color: #ebdbc2;
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 10px 10px;
+  width: 100vw;
+  overflow: hidden;
+  background-color: #ebdbc2;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 10px 10px;
 }
 
 .name {
-    background-color: #ebdbc2;
-    color: #746f68;
-    text-align: center;
+  background-color: #ebdbc2;
+  color: #746f68;
+  text-align: center;
 }
 
 .nav-buttons {
-    display: flex;
-    justify-content: space-between;
+  display: flex;
+  justify-content: space-between;
 }
 
 .navigation #navLinks {
-    display: none;
+  display: none;
 }
 
 .navigation a {
-    color: white;
-    padding: 14px 16px;
-    text-decoration: none;
-    font-size: 16px;
-    display: block;
+  color: white;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 16px;
+  display: block;
 }
 
 .navigation a.icon {
-    background: #ebdbc2;
-    display: block;
-    position: absolute;
-    left: 0;
-    top: 0;
+  background: #ebdbc2;
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
 }
 
 .navigation a:hover {
-    background-color: #746f68;
-    color: rgb(226, 208, 184);
+  background-color: #746f68;
+  color: rgb(226, 208, 184);
 }
 
 .navigation button {
-    background-color: #ebdbc2;
-    border-style: none;
-    border-radius: 0;
-    color: #746f68;
-    padding: 14px 16px;
-    text-align: center;
-    font-size: 20px;
+  background-color: #ebdbc2;
+  border-style: none;
+  border-radius: 0;
+  color: #746f68;
+  padding: 14px 16px;
+  text-align: center;
+  font-size: 20px;
 }
 
 .navigation button:hover {
-    background-color: #746f68;
-    color: rgb(226, 208, 184);
+  background-color: #746f68;
+  color: rgb(226, 208, 184);
+}
+
+#cart-container {
+  display: flex;
+  justify-content: end;
 }
 
 @media (min-width: 768px) {
-    .navigation #navLinks {
-        display: flex;
-        justify-content: flex-start;
-        width: auto;
-    }
+  .navigation #navLinks {
+    display: flex;
+    justify-content: flex-start;
+    width: auto;
+  }
 
-    .navigation button {
-        display: flex;
-        justify-content: flex-end;
-    }
+  .navigation button {
+    display: flex;
+    justify-content: flex-end;
+  }
 
-    .navigation a {
-        display: inline-block;
-    }
+  .navigation a {
+    display: inline-block;
+  }
 
-    .navigation a.icon {
-        display: none;
-    }
+  .navigation a.icon {
+    display: none;
+  }
 }
