@@ -1,9 +1,9 @@
 .offcanvas {
     background-color: #ebdbc2;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .offcanvas-title {
-    font-family: 'Courier New', Courier, monospace;
     font-size: 24px;
 }
 
@@ -11,4 +11,18 @@
     background-color: #746f68;
     color: #ffffff;
     padding: 14px 16px;
+    border-style: none;
+}
+
+.offcanvas .addToCheckout:hover {
+    background-color: #a99d8b;
+    color: #ffffff;
+    border: solid;
+    border-color: #746f68;
+}
+
+.offcanvas .button-checkout {
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
 }
