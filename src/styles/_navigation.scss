@@ -1,11 +1,11 @@
 .navigation {
-  width: 100vw;
-  overflow: hidden;
-  background-color: #ebdbc2;
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  padding: 10px 10px;
+    width: 100vw;
+    overflow: hidden;
+    background-color: #ebdbc2;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding: 10px 10px;
 }
 
 .name {
@@ -24,24 +24,24 @@
 }
 
 .navigation a {
-  color: white;
-  padding: 14px 16px;
-  text-decoration: none;
-  font-size: 16px;
-  display: block;
+    color: #746f68;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 16px;
+    display: block;
 }
 
 .navigation a.icon {
-  background: #ebdbc2;
-  display: block;
-  position: absolute;
-  left: 0;
-  top: 0;
+    background-color: #ebdbc2;
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
 }
 
 .navigation a:hover {
-  background-color: #746f68;
-  color: rgb(226, 208, 184);
+    background-color: #746f68;
+    color: #ffffff;
 }
 
 .navigation button {
@@ -55,13 +55,13 @@
 }
 
 .navigation button:hover {
-  background-color: #746f68;
-  color: rgb(226, 208, 184);
+    background-color: #746f68;
+    color: #ffffff;
 }
 
-#cart-container {
-  display: flex;
-  justify-content: end;
+.cart-button {
+    display: flex;
+    justify-content: end;
 }
 
 @media (min-width: 768px) {
