@@ -14,11 +14,12 @@ body {
     background-image: url(/src/hero-products.png);
     background-size: cover;
     background-position: center;
-    padding: 100px 20px;
+    padding: 100px 0px;
     text-align: center;
     padding-bottom: 40px;
     text-align: center;
     position: relative;
+    width: 100vw;
 
     #hero-content {
       max-width: 800px;
@@ -56,20 +57,26 @@ body {
     margin-bottom: 0px;
     font-weight: normal;
     color: black;
+    width: 100vw;
   }
 
   #products-container {
-    @include m.flex(row, space-evenly, center);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
     flex-wrap: wrap;
     gap: 20px;
     margin: 2rem 0rem;
 
     .product-card {
       @include m.flex(column, center, center);
-      width: 200px;
+      flex: 1 1 100%;
+      min-width: 150px;
+      max-width: 200px;
+      margin: 8px;
+      box-sizing: border-box;
       text-align: center;
-      padding: 10px 10px;
-      gap: 1rem;
+      padding: 10px;
 
       background-color: v.$secondarybg;
       background-image: linear-gradient(
@@ -103,20 +110,20 @@ body {
       .product-price {
         width: 100%;
         text-align: right;
-        color: red;
+        color: rgb(0, 0, 0);
         font-size: 1.5rem;
       }
 
       .card-button {
         @include m.size(40px, 90%);
-        background-color: #007bff;
+        background-color: #746f68;
         color: white;
         border: none;
         border-radius: 10px;
-        font-size: 1.5rem;
+        font-size: 1rem;
 
         &:hover {
-          background-color: rgb(96, 96, 255);
+          background-color: #e3c7c7;
         }
       }
     }
