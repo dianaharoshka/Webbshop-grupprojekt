@@ -19,6 +19,7 @@ body {
     padding-bottom: 40px;
     text-align: center;
     position: relative;
+    width: 100vw;
 
     #hero-content {
       max-width: 800px;
@@ -56,6 +57,7 @@ body {
     margin-bottom: 0px;
     font-weight: normal;
     color: black;
+    width: 100vw;
   }
 
   #products-container {
@@ -66,7 +68,7 @@ body {
 
     .product-card {
       @include m.flex(column, center, center);
-      width: 200px;
+      width: 215px;
       text-align: center;
       padding: 10px 10px;
       gap: 1rem;
@@ -103,13 +105,13 @@ body {
       .product-price {
         width: 100%;
         text-align: right;
-        color: red;
+        color: rgb(0, 0, 0);
         font-size: 1.5rem;
       }
 
       .card-button {
         @include m.size(40px, 90%);
-        background-color: #007bff;
+        background-color: #746f68;
         color: white;
         border: none;
         border-radius: 10px;
