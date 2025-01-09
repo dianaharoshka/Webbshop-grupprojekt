@@ -63,8 +63,8 @@
 
 .cart-button {
   position: absolute;
-  bottom: 10px;
-  right: 0px;
+  top: 0;
+  right: 0;
 }
 
 @media (min-width: 768px) {
@@ -89,6 +89,7 @@
 
   .cart-button {
     position: absolute;
+    top: auto;
     bottom: 10px;
     right: 10px;
   }
