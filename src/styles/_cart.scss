@@ -1,10 +1,12 @@
 .offcanvas {
     background-color: #ebdbc2;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: "Khand", sans-serif;
 }
 
 .offcanvas-title {
     font-size: 24px;
+    font-weight: bold;
+    color: #746f68;
 }
 
 .offcanvas .addToCheckout {
@@ -23,6 +25,97 @@
 
 .offcanvas .button-checkout {
     position: absolute;
-    bottom: 15px;
-    right: 15px;
+    bottom: 20px;
+    right: 30px;
+}
+
+.offcanvas .offcanvas-body {
+    background-color: #fffdf1;
+    padding: 30px;
+}
+
+.cart-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    border: 1px solid #ddd;
+    margin-bottom: 10px;
+    position: relative;
+}
+
+.product-cart-title {
+    flex: 2;
+    margin: 15px;
+    margin-right: 10px;
+}
+
+
+.quantity-controls {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+
+.quantity-display {
+    width: 10px;
+    text-align: center;
+    font-size: 16px;
+}
+
+.decrement-btn,
+.increment-btn {
+    width: 20px;
+    height: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f5f5f5;
+    border: 1px solid #ddd;
+    border-radius: 30%;
+    font-size: 18px;
+    color: #555;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+    font-weight: bold;
+}
+
+.decrement-btn:hover,
+.increment-btn:hover {
+    background-color: #d79d96;
+    color: #fff;
+}
+
+.remove-item-cart {
+    flex: 0;
+    position: relative;
+    background: none;
+    border: none;
+    cursor: pointer;
+    margin: 6px;
+}
+  
+.remove-item-cart i {
+    font-size: 1.2rem;
+    color: #888;
+}
+  
+.remove-item-cart:hover i {
+    color: #e74c3c;
+}
+
+.product-cart-price {
+    flex: 1;
+    text-align: right;
+    padding: 5px;
+}
+
+.price-total {
+    display: flex;
+    justify-content: end;
+    font-weight: bold;
+    padding: 10px;
+    margin-top: 10px;
 }
