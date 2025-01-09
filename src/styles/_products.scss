@@ -69,7 +69,7 @@ body {
     margin: 2rem 0rem;
 
     .product-card {
-      @include m.flex(column, center, center);
+      @include m.flex(column, space-between, center);
       flex: 1 1 100%;
       min-width: 150px;
       max-width: 200px;
@@ -87,6 +87,7 @@ body {
       box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
       transition: box-shadow 0.3s ease;
       border-radius: 12px;
+      justify-content: space-between;
 
       .product-img {
         width: 100%;
@@ -121,6 +122,8 @@ body {
         border: none;
         border-radius: 10px;
         font-size: 1rem;
+        align-self: center;
+        margin-top: auto;
 
         &:hover {
           background-color: #e3c7c7;
