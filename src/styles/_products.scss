@@ -11,7 +11,7 @@ body {
   .products-hero {
     @include m.flex(column, center, center);
     background-color: v.$secondarybg;
-    background-image: url(/src/hero-products.png);
+    background-image: url(/assets/hero-products.png);
     background-size: cover;
     background-position: center;
     padding: 100px 0px;
