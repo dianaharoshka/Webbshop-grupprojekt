@@ -16,7 +16,32 @@
     <link rel="stylesheet" href="/src/main.scss" />
   </head>
   <body>
-    <h2 id="site-name">Flawless Finds</h2>
+    <nav class="navigation">
+      <h1 class="name">Flawless Finds</h1>
+      <div class="nav-buttons">
+        <div id="navLinks">
+          <a href="#home">HOME</a>
+          <a href="products.html">PRODUCTS</a>
+          <a href="#contact">CONTACT</a>
+        </div>
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+          <i class="fa fa-bars"></i>
+        </a>
+
+        <div class="cart-button">
+          <button
+            class="btn btn-primary"
+            type="button"
+            data-bs-toggle="offcanvas"
+            data-bs-target="#offcanvasRight"
+            aria-controls="offcanvasRight"
+          >
+            <i class="fa-solid fa-basket-shopping"></i>
+          </button>
+        </div>
+      </div>
+    </nav>
+
     <section class="products-hero">
       <div id="hero-content">
         <h1>Products</h1>
