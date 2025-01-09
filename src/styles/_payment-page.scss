@@ -75,6 +75,7 @@ h2 {
   background: none;
   border: none;
   cursor: pointer;
+  margin: 6px;
 }
 
 .remove-item-checkout i {
@@ -96,6 +97,52 @@ h2 {
   display: flex;
   justify-content: center;
   align-items: center;
+  gap: 5px;
+}
+
+.decrement-btn,
+.increment-btn {
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f5f5f5;
+  border: 1px solid #ddd;
+  border-radius: 50%;
+  font-size: 18px;
+  font-weight: bold;
+  color: #555;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+.decrement-btn,
+.increment-btn {
+  width: 20px;
+  height: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f5f5f5;
+  border: 1px solid #ddd;
+  border-radius: 30%;
+  font-size: 18px;
+  color: #555;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+  font-weight: bold;
+}
+
+.decrement-btn:hover,
+.increment-btn:hover {
+  background-color: #d79d96;
+  color: #fff;
+}
+
+.quantity-display {
+  width: 10px;
+  text-align: center;
+  font-size: 16px;
 }
 
 .product-checkout-price {
