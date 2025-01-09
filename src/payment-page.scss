@@ -17,7 +17,6 @@ body {
   width: 100%;
   box-sizing: border-box;
 }
-
 .checkout-container {
   max-width: 600px;
   width: 90%;
@@ -44,7 +43,6 @@ h2 {
 .cart {
   margin-bottom: 30px;
 }
-
 .cart-items {
   list-style: none;
   padding: 0;
@@ -170,14 +168,17 @@ footer a:hover {
   .checkout-container {
     max-width: 600px;
   }
+
   header h1 {
     font-size: 24px;
   }
+
   h2 {
     font-size: 20px;
   }
+
   footer div {
     width: 25%;
     margin-bottom: 0;
   }
-}/*# sourceMappingURL=payment-page.css.map */
+}

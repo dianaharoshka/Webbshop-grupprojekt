@@ -1,5 +1,7 @@
 import { fetchProducts } from "./services/DummyJSONCall";
 import { Product } from "./types/IProduct";
+import OrderHandler from "./services/StorageHandler";
+import FinishedOrder from "./services/orderIdGenerator";
 
 const productContainer = document.getElementById("products-container");
 
@@ -7,7 +9,7 @@ const productContainer = document.getElementById("products-container");
   try {
     const fetchedProducts: Product[] = await fetchProducts();
     const products: Product[] = fetchedProducts.slice(0, 10);
-    console.log("Fetched products:", products);
+    // console.log("Fetched products:", products);
     products.forEach((product) => {
       createProductCard(product);
     });
@@ -47,8 +49,9 @@ function createProductCard(product: Product): HTMLElement {
   addToCart.classList.add("card-button");
   addToCart.textContent = "Add to cart";
   card.appendChild(addToCart);
+
   addToCart.addEventListener("click", () => {
-    console.log(product);
+    OrderHandler.addToCart(product);
   });
 
   return card;
