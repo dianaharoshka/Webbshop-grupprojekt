@@ -93,7 +93,8 @@ function createQuantityControls(product: Product): HTMLElement {
 function createRemoveButton(product: Product): HTMLButtonElement {
   const removeButton = document.createElement("button");
   removeButton.classList.add("remove-item-cart");
-  removeButton.textContent = "Remove item";
+  removeButton.innerHTML = '<i class="fas fa-trash"></i>';
+
 
   removeButton.addEventListener("click", () => {
     OrderHandler.deleteItem(product);
