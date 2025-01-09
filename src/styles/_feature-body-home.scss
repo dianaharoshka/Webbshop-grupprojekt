@@ -1,3 +1,4 @@
+@use "./mixins" as m;
 @use "./variables" as v;
 * {
   margin: 0;
@@ -38,7 +39,7 @@ body {
   h2 {
     font-size: 2rem;
     font-weight: bold;
-    color: #444;
+    color: palevioletred;
   }
 
   .card {
@@ -69,13 +70,23 @@ body {
       color: #777;
 
       &.text-success {
-        color: #28a745;
+        width: 100%;
+        text-align: right;
+        color: rgb(0, 0, 0) !important;
+        font-size: 1.5rem;
+        font-weight:normal !important;
       }
     }
 
     .btn-primary {
+      @include m.size(40px, 90%);
       background-color: #746f68;
+      color: white;
       border: none;
+      border-radius: 10px;
+      font-size: 1rem;
+      align-self: center;
+      margin-top: auto;
 
       &:hover {
         background-color: #e3c7c7;
