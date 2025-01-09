@@ -18,7 +18,6 @@ function createProductCard(product: Product): HTMLElement {
   const card = document.createElement("div");
   card.classList.add("product-card");
   if (cartItems) cartItems.appendChild(card);
-// "hitta" cartItems 
 
   const image = document.createElement("img");
   image.classList.add("product-img");

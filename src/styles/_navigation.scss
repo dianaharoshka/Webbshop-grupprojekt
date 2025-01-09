@@ -60,8 +60,9 @@
 }
 
 .cart-button {
-    display: flex;
-    justify-content: end;
+  position: absolute;
+  bottom: 10px;
+  right: 0px;
 }
 
 @media (min-width: 768px) {
@@ -82,5 +83,11 @@
 
   .navigation a.icon {
     display: none;
+  }
+
+  .cart-button {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
   }
 }
