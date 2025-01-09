@@ -440,6 +440,11 @@ body {
   justify-content: space-between;
   flex-grow: 1;
 }
+.products .card .card-body .card-text.text-success {
+  margin-top: auto;
+  text-align: right;
+  font-size: 1.5rem;
+}
 .products .card:hover {
   transform: scale(1.05);
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
@@ -476,7 +481,7 @@ body {
   border-radius: 10px;
   font-size: 1rem;
   align-self: center;
-  margin-top: auto;
+  margin-top: 10px;
 }
 .products .card .btn-primary:hover {
   background-color: #e3c7c7;

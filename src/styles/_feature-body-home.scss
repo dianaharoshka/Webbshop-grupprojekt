@@ -55,6 +55,12 @@ body {
       flex-direction: column;
       justify-content: space-between;
       flex-grow: 1;
+
+      .card-text.text-success {
+        margin-top: auto;
+        text-align: right;
+        font-size: 1.5rem;
+      }
     }
 
     &:hover {
@@ -96,7 +102,7 @@ body {
       border-radius: 10px;
       font-size: 1rem;
       align-self: center;
-      margin-top: auto;
+      margin-top: 10px;
 
       &:hover {
         background-color: #e3c7c7;
