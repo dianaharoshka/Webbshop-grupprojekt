@@ -33,12 +33,12 @@
   display: block;
 }
 
-.navigation a.icon {
+.navigation .icon {
   background-color: #ebdbc2;
   display: block;
   position: absolute;
-  left: 0;
   top: 0;
+  left: 0;
 }
 
 .navigation a:hover {
@@ -83,7 +83,7 @@
     display: inline-block;
   }
 
-  .navigation a.icon {
+  .navigation .icon {
     display: none;
   }
 

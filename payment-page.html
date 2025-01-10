@@ -21,6 +21,8 @@
   <body>
     <div id="app"></div>
     <script type="module" defer src="/src/cart.ts"></script>
+    <script type="module" defer src="/nav.ts"></script>
+
 
     <nav class="navigation">
       <h1 class="name">Flawless Finds</h1>
@@ -30,9 +32,9 @@
           <a href="products.html">PRODUCTS</a>
           <a href="#contact">CONTACT</a>
         </div>
-        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+        <button class="icon" id="nav-btn-function" >
           <i class="fa fa-bars"></i>
-        </a>
+        </button>
 
         <div class="cart-button">
           <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" 
@@ -189,17 +191,6 @@
         </ul>
       </div>
     </footer>
-
-    <script>
-      function myFunction() {
-        var x = document.getElementById("navLinks");
-        if (x.style.display === "block") {
-          x.style.display = "none";
-        } else {
-          x.style.display = "block";
-        }
-      }
-    </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" 
     integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 
