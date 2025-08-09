@@ -1,7 +1,7 @@
 import { fetchProducts } from "./services/DummyJSONCall";
 import { Product } from "./types/IProduct";
 import OrderHandler from "./services/StorageHandler";
-import FinishedOrder from "./services/orderIdGenerator";
+// import FinishedOrder from "./services/orderIdGenerator";
 
 const productContainer = document.getElementById("products-container");
 
